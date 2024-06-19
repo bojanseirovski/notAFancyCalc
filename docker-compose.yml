@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+  calc:
+    ports:
+      - '1234:80'
+    image: nginx:stable-perl
+    container_name: calc
+    volumes:
+      - ./:/usr/share/nginx/html

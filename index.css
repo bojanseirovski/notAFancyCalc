@@ -1,0 +1,20 @@
+* {
+    align-items: center;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: darkslateblue;
+    color: aliceblue;
+}
+
+.row span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+button {
+    align-items: center;
+    
+}
