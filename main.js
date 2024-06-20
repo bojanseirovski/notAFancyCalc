@@ -43,7 +43,8 @@ function getOpperands(op) {
             num = "";
             opperate.value = op;
         }
-    } else if ((op == "=")) {
+    } 
+    if ((op == "=") || isEnterPressed(op)) {
         //calc
         operations.push(parseFloat(num));
         const newArray = operations.filter(function (value) {
@@ -56,7 +57,7 @@ function getOpperands(op) {
         operations = [parseFloat(totalNums)];
     }
     // clear
-    if (op == "C" || op == "c") {
+    if (op == "C" || op == "c" || isEscapePressed(op)) {
         num = "";
         totalNums = "";
         operations = [];
@@ -65,7 +66,15 @@ function getOpperands(op) {
 }
 
 function isEnterPressed(key) {
-    if (key === 'Enter') {
+    if ((key === 'Enter') || (key.keyCode && (key.keyCode === 13))) {
         return true;
     }
+    return false;
+}
+
+function isEscapePressed(key) {
+    if ((key === 'Escape') || (key.keyCode && (key.keyCode === 27))) {
+        return true;
+    }
+    return false;
 }
