@@ -9,12 +9,32 @@ body {
     color: aliceblue;
 }
 
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 45%;
+    margin: 20px auto 20px auto;
+    align-items: center;
+}
+
 .row span {
     margin-left: 5px;
     margin-right: 5px;
+    margin-bottom: 15px;
+    padding: 15px 5px 15px 5px;
+}
+.row span * {
+    font-size: large;
+    margin-bottom: 15px;
+}
+input#operate {
+    height: 55px;
+    width: 135px;
 }
 
 button {
     align-items: center;
+    width: 55px;
+    height: 55px;
     
 }
