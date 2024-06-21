@@ -6,15 +6,15 @@ var num = "";
 
 const body = document.getElementsByTagName("body")[0];
 const content = document.getElementById("content");
-const opperate = document.getElementById("operate");
+const operate = document.getElementById("operate");
 
 content.addEventListener('click', (event) => {
     const isButton = event.target.nodeName === 'BUTTON';
     if (!isButton) {
         return;
     }
-    let op = event.target.getAttribute("data-opperand");
-    getOpperands(op);
+    let op = event.target.getAttribute("data-operand");
+    getOperands(op);
 });
 
 function calc(ops) {
@@ -30,18 +30,18 @@ function isOperator(op) {
     return operators.indexOf(op) > -1;
 }
 
-function getOpperands(op) {
+function getOperands(op) {
     if (op != "=") {
         //   number
         if (!isNaN(op)) {
             num = num + op;
-            opperate.value = num;
+            operate.value = num;
         } else if (isOperator(op)) {
             // operator
-            operations.push(parseInt(num));
+            operations.push(parseFloat(num));
             operations.push(op);
             num = "";
-            opperate.value = op;
+            operate.value = op;
         }
     } 
     if ((op == "=") || isEnterPressed(op)) {
@@ -52,7 +52,7 @@ function getOpperands(op) {
         });
         operations = newArray;
         totalNums = calc(operations);
-        opperate.value = totalNums;
+        operate.value = totalNums;
         num = "";
         operations = [parseFloat(totalNums)];
     }
@@ -61,7 +61,7 @@ function getOpperands(op) {
         num = "";
         totalNums = "";
         operations = [];
-        opperate.value = 0;
+        operate.value = 0;
     }
 }
 
